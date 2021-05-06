@@ -158,7 +158,7 @@ function left(){
 function right(){
     
     if(player_x <=850){
-        player_x = player_x + block_image_width ;
+        player_x = player_x +  block_image_width ;
         console.log("block_image_width = " + block_image_width);
         console.log("When UP pressed , X = " + player_x + ", Y = " + player_y);
         canvas.remove(player_object);
