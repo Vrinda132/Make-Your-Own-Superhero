@@ -11,7 +11,7 @@ var block_object = "" ;
 
 function player_update() {
 
-    fabric.player.fromURL("player.png" , function(Img) {
+    fabric.Image.fromURL("player.png" , function(Img) {
         player_object = Img ;
         
         player_object.scaleToWidth(150);
@@ -120,8 +120,51 @@ function my_keydown(e) {
     console.log("right") ;
    } 
 
-
-
 }
+
+function up(){
+    
+    if(player_y >=0){
+        player_y = player_y - block_image_height ;
+        console.log("block_image_height = " + block_image_height);
+        console.log("When UP pressed , X = " + player_x + ", Y = " + player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function down(){
+    
+    if(player_y <=500){
+        player_y = player_y + block_image_height ;
+        console.log("block_image_height = " + block_image_height);
+        console.log("When DOWN pressed , X = " + player_x + ", Y = " + player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function left(){
+    
+    if(player_x >=0){
+        player_x = player_x - block_image_width ;
+        console.log("block_image_width = " + block_image_width);
+        console.log("When UP pressed , X = " + player_x + ", Y = " + player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function right(){
+    
+    if(player_x <=850){
+        player_x = player_x + block_image_width ;
+        console.log("block_image_width = " + block_image_width);
+        console.log("When UP pressed , X = " + player_x + ", Y = " + player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
 
 
